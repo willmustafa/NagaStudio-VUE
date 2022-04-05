@@ -4,6 +4,7 @@
       <div class="d-flex align-middle flex-wrap">
         <div class="logo">
           <router-link to="/" class="white-logo"><img src="../../assets/logo-white.png" alt=""></router-link>
+          <router-link to="/" class="black-logo"><img src="../../assets/logo-dark.png" alt=""></router-link>
         </div>
         <!--logo end-->
         <nav class="ms-auto">
@@ -54,10 +55,22 @@
 </script>
 
 <style scoped>
-    .nav_light a {
-        color: black !important;
-    }
-    
+  .nav_light a {
+    color: black !important;
+  }
+
+  .black-logo {
+    display: none;
+  }
+
+  .nav_light .white-logo {
+    display: none;
+  }
+
+  .nav_light .black-logo {
+    display: block;
+  }
+
   .nav_light {
     background-color: white
   }
