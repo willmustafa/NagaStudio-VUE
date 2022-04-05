@@ -5,7 +5,7 @@
             <div class="col-md-7 offset-md-5 bg-light contact-wrapper">
                 <ul class="lg-social wow slideInLeft">
                     <li><a href="#" title="" class="spotify-ic"><i class="fab fa-spotify"></i></a></li>
-                    <li><a href="#" title="" class="music"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://github.com/willmustafa" title="" class="music"><i class="fab fa-github"></i></a></li>
                     <li><a href="#" title="" class="youtube"><i class="fab fa-youtube"></i></a></li>
                     <li><a href="#" title="" class="soundcloud"><i class="fab fa-linkedin"></i></a></li>
                 </ul>
@@ -18,33 +18,42 @@
                         </div>
                     </div>
                     <div class="mt-4 row">
-                        <form method="post" class="contact-form">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="txtName" class="form-control" placeholder="Your Name *"
-                                            value="" />
+                        <div v-if="!formSent">
+                            <transition name="fade" mode="out-in">
+                                <form @submit.prevent="sendEmail" class="contact-form">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="text" name="txtName" class="form-control" placeholder="Your Name *"
+                                                    value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="txtEmail" class="form-control"
+                                                    placeholder="Your Email *" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="txtPhone" class="form-control"
+                                                    placeholder="Your Phone Number *" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <textarea name="txtMsg" class="form-control" placeholder="Your Message *"
+                                                    style="width: 100%; height: 150px;"></textarea>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <input type="text" name="txtEmail" class="form-control"
-                                            placeholder="Your Email *" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" name="txtPhone" class="form-control"
-                                            placeholder="Your Phone Number *" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <textarea name="txtMsg" class="form-control" placeholder="Your Message *"
-                                            style="width: 100%; height: 150px;"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                                </form>
+                            </transition>
+                        </div>
+                        <div v-if="formSent">
+                            <transition name="fade" mode="out-in">
+                                <h2>Mail sent!</h2>
+                            </transition>
+                        </div>
                     </div>
                     <div class="contact-managers mt-4">
                         <div class="row">
@@ -63,11 +72,8 @@
                                 <span>Thaila Nagazawa</span>
                                 <span>manager@nagastudios.com</span>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>
@@ -76,6 +82,17 @@
 
 <script>
     export default {
+        data () {
+            return {
+                formSent: false
+            }
+        },
+        methods: {
+            sendEmail () {
+                console.log('email')
+                this.formSent = !this.formSent
+            }
+        }
 
     }
 </script>

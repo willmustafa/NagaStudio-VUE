@@ -6,13 +6,13 @@
           <div class="py-5">
             <h1 class="display-2 mt-3 fw-bold">About Us</h1>
             <span class="divider-line mt-4"></span>
-            <p class="mt-3">Metropolis Studios is Europe’s #1 independent recording studio and home to the best
+            <p class="mt-3">Metropolis Studios is Europe's #1 independent recording studio and home to the best
               mastering engineers
               in the world.</p>
             <p>Our facilities include an iconic range of dynamic tracking and mixing studios, the best mastering suites
               found anywhere in the world, a series of new writing and production rooms available for short and longterm
               lease, and other serviced spaces for rent currently occupied by the likes of Roland and Spotify.</p>
-            <button class="btn btn-outline-primary">Learn more</button>
+            <button class="btn btn-outline-primary"><router-link to="/about">Learn more</router-link></button>
           </div>
         </div>
         <div class="col-md-4 col-12 offset-md-1 pe-0 d-flex">

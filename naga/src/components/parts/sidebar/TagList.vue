@@ -3,24 +3,41 @@
         <h3 class="heading">Tags</h3>
         <span class="divider-line mb-3"></span>
         <ul class="tags">
-            <li><a href="#">Travel</a></li>
-            <li><a href="#">Adventure</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Lifestyle</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">Freelancing</a></li>
-            <li><a href="#">Travel</a></li>
-            <li><a href="#">Adventure</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Lifestyle</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">Freelancing</a></li>
+            <li v-for="(tag, i) in tags" :key="i">
+              <a :href="tag.href">{{ tag.name }}</a>
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
+      data () {
+        return {
+          tags: [
+            {
+              name: 'Microphone',
+              href: '#'
+            },
+            {
+              name: 'Technology',
+              href: '#'
+            },
+            {
+              name: 'Recording',
+              href: '#'
+            },
+            {
+              name: 'Studio',
+              href: '#'
+            },
+            {
+              name: 'How to',
+              href: '#'
+            }
+          ]
+        }
+      }
 
     }
 </script>

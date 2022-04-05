@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
 import FullBlog from '../components/sections/FullBlog.vue'
 import SingleBlog from '../views/SingleBlog.vue'
+import SinglePage from '../views/SinglePage.vue'
+import AlbunsPage from '../components/sections/FullPortfolio.vue'
 
 const routes = [
     {
@@ -11,7 +13,20 @@ const routes = [
         meta:{
             title: "Home"
         }
-        
+    },
+    {
+        path: '/albums', 
+        component: AlbunsPage,
+        meta:{
+            title: "Albums"
+        }
+    },
+    {
+        path: '/about', 
+        component: SinglePage,
+        meta:{
+            title: "About"
+        }
     },
     {
         path: '/contact', 

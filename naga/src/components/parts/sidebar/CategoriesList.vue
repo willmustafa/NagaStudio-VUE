@@ -2,18 +2,40 @@
     <div>
         <h3 class="heading">Categories</h3>
         <span class="divider-line mb-3"></span>
-        <ul class="categories">
-            <li><a href="#">Food <span>(12)</span></a></li>
-            <li><a href="#">Travel <span>(22)</span></a></li>
-            <li><a href="#">Lifestyle <span>(37)</span></a></li>
-            <li><a href="#">Business <span>(42)</span></a></li>
-            <li><a href="#">Adventure <span>(14)</span></a></li>
+        <ul class="categories" v-for="(category, i) in categories" :key="i">
+            <li><a :href="category.href">{{ category.name }}<span>({{ category.qty }})</span></a></li>
         </ul>
     </div>
 </template>
 
 <script>
     export default {
+      data () {
+        return {
+          categories: [
+            {
+              name: 'Technical',
+              qty: 12,
+              href: '#'
+            },
+            {
+              name: 'Live',
+              qty: 5,
+              href: '#'
+            },
+            {
+              name: 'Recording',
+              qty: 2,
+              href: '#'
+            },
+            {
+              name: 'Stories of the road',
+              qty: 7,
+              href: '#'
+            }
+          ]
+        }
+      }
 
     }
 </script>
