@@ -15,7 +15,7 @@
   import CopyFooter from './components/sections/CopyFooter.vue'
 
   export default {
-    name: 'App',
+    name: 'NagaStudio',
     components: {
       HomeHeader,
       CopyFooter
